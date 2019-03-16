@@ -14,6 +14,11 @@ Iniciar o serviço, execute o comando:
 python app.py
 ```
 
+Consultando, exemplo by CURL:
+```
+curl -i -X GET http://127.0.0.1:5000/clients/v1/?q=brian
+```
+
 Para executar os testes, execute o comando:
 ```
 pytest
