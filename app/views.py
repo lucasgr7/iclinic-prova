@@ -10,4 +10,7 @@ bp = Blueprint('clients', __name__, url_prefix='/clients/v1')
 @bp.route('/') 
 def query():
     clients = service.search_clients(request.args.get('q'))
-    return jsonify(list(map(lambda x: x.name, clients)))
+    if(clients != None):
+        return jsonify(list(map(lambda x: x.name, clients)))
+    else:
+        return jsonify([])
