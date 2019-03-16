@@ -1,6 +1,5 @@
 import os
 from flask import Flask
-from flask_restplus import Api
 from .models import ClientRepository, Client
 import csv
 
@@ -24,4 +23,3 @@ with open('D:/GIT/iclinic/patients.csv', 'rt', encoding='utf8') as csvFile:
 from . import views
 
 app.register_blueprint(views.bp)
-api = Api(app)

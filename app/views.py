@@ -5,10 +5,9 @@ from flask_restplus import Api, Resource, fields
 from werkzeug.exceptions import abort
 from . import service
 
-bp = Blueprint('clients', __name__, url_prefix='/api/v1')
+bp = Blueprint('clients', __name__, url_prefix='/clients/v1')
      
 @bp.route('/') 
 def query():
-    query = request.args.get('q')
-    clients = service.search_clients(query)
+    clients = service.search_clients(request.args.get('q'))
     return jsonify(list(map(lambda x: x.name, clients)))
